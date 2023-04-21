@@ -57,3 +57,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Encoder Shiet
 #define ENCODERS_PAD_A { F5 } //Pro Micro pin on Out A
 #define ENCODERS_PAD_B { F4 } //Pro Micro pin on Out B
+
+//OLED Shiet
+#define OLED_TIMEOUT 120000
+#define OLED_BIRGHTNESS 120
