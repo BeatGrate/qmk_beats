@@ -284,8 +284,7 @@ bool oled_task_user(void) {
 #endif // OLED_ENABLE
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) 
-	  
+  switch (keycode) {
 /* KEYBOARD PET STATUS START */
 	case KC_LCTL:
 	case KC_RCTL:
