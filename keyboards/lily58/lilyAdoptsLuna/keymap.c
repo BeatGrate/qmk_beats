@@ -290,26 +290,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
     // set_timelog();
 	  
-    /* KEYBOARD PET STATUS START */
-
-case KC_LCTL:
-case KC_RCTL:
-    if (record->event.pressed) {
-	isSneaking = true;
-    } else {
-	isSneaking = false;
-    }
-    break;
-case KC_SPC:
-    if (record->event.pressed) {
-	isJumping  = true;
-	showedJump = false;
-    } else {
-	isJumping = false;
-    }
-    break;
-
-    /* KEYBOARD PET STATUS END */
+/* KEYBOARD PET STATUS START */
+	case KC_LCTL:
+	case KC_RCTL:
+	    if (record->event.pressed) {
+		isSneaking = true;
+	    } else {
+		isSneaking = false;
+	    }
+	    break;
+	case KC_SPC:
+	    if (record->event.pressed) {
+		isJumping  = true;
+		showedJump = false;
+	    } else {
+		isJumping = false;
+	    }
+	    break;
+/* KEYBOARD PET STATUS END */
 }
   return true;
 }
