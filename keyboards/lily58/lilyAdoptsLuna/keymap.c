@@ -263,9 +263,11 @@ const char *read_keylogs(void);
 bool oled_task_user(void) {
   if (is_keyboard_master()) {
     // If you want to change the display of OLED, you need to change here
-    oled_write_ln(read_layer_state(), false);
-    oled_write_ln(read_keylog(), false);
-    oled_write_ln("My Gooseness", false);
+      /* KEYBOARD PET RENDER START */
+
+    render_luna(0, 13);
+
+    /* KEYBOARD PET RENDER END */
     //oled_write_ln(read_mode_icon(keymap_config.swap_lalt_lgui), false);
     //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
