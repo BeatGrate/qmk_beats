@@ -304,7 +304,7 @@ static void print_status_narrow(void) {
     /* Print current layer */
     oled_write("LAYER", false);
 
-    oled_set_cursor(0, 5);
+    oled_set_cursor(0, 4);
 
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
