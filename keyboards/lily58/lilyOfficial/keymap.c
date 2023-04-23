@@ -336,6 +336,8 @@ static void print_status_narrow(void) {
     oled_set_cursor(0, 8);
     oled_write("CPSLK", led_usb_state.caps_lock);
 
+}
+
 
 // When you add source files to SRC in rules.mk, you can use functions.
 const char *read_layer_state(void);
