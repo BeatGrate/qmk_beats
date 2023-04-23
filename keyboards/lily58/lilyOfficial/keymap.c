@@ -298,7 +298,6 @@ static void print_status_narrow(void) {
         oled_write_raw_P(windows_logo, sizeof(windows_logo));
     }
 
-    }
 
     oled_set_cursor(0, 3);
 
@@ -323,9 +322,7 @@ static void print_status_narrow(void) {
         default:
             oled_write("Undef", false);
     }
-
 }
-
 
 // When you add source files to SRC in rules.mk, you can use functions.
 const char *read_layer_state(void);
