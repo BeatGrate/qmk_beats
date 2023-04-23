@@ -278,7 +278,7 @@ static void print_logo_narrow(void) {
     /* wpm counter */
     uint8_t n = get_current_wpm();
     char    wpm_str[4];
-    oled_set_cursor(0, 14);
+    oled_set_cursor(0, 8);
     wpm_str[3] = '\0';
     wpm_str[2] = '0' + n % 10;
     wpm_str[1] = '0' + (n /= 10) % 10;
@@ -331,10 +331,6 @@ static void print_status_narrow(void) {
         default:
             oled_write("Undef", false);
     }
-
-    /* caps lock */
-    oled_set_cursor(0, 8);
-    oled_write("CPSLK", led_usb_state.caps_lock);
 
 }
 
