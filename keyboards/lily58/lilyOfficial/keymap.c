@@ -308,7 +308,7 @@ static void print_status_narrow(void) {
 
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write("Base", false);
+            oled_write("Qwrty", false);
             break;
         case _RAISE:
             oled_write("Raise", false);
@@ -317,7 +317,7 @@ static void print_status_narrow(void) {
             oled_write("Lower", false);
             break;
         case _ADJUST:
-            oled_write("Adj", false);
+            oled_write("Bofum", false);
             break;
         default:
             oled_write("Undef", false);
