@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# YOU NEED WSLU for the variable below to work
 winUserHome=$(wslpath "$(wslvar USERPROFILE)")
 git push
 if [ -z "$1" ]
