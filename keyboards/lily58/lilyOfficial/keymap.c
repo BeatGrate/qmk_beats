@@ -256,6 +256,77 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 
 /* KEYBOARD PET END */
 
+static void print_logo_narrow(void) {
+    render_logo();
+
+    /* wpm counter */
+    uint8_t n = get_current_wpm();
+    char    wpm_str[4];
+    oled_set_cursor(0, 14);
+    wpm_str[3] = '\0';
+    wpm_str[2] = '0' + n % 10;
+    wpm_str[1] = '0' + (n /= 10) % 10;
+    wpm_str[0] = '0' + n / 10;
+    oled_write(wpm_str, false);
+
+    oled_set_cursor(0, 15);
+    oled_write(" wpm", false);
+}
+
+static void print_status_narrow(void) {
+    /* Print current mode */
+    oled_set_cursor(0, 0);
+    if (keymap_config.swap_lctl_lgui) {
+        oled_write_raw_P(mac_logo, sizeof(mac_logo));
+    } else {
+        oled_write_raw_P(windows_logo, sizeof(windows_logo));
+    }
+
+    oled_set_cursor(0, 3);
+
+    switch (get_highest_layer(default_layer_state)) {
+        case _QWERTY:
+            oled_write("QWRTY", false);
+            break;
+        case _GAMING:
+            oled_write("GAMES", false);
+            break;
+        default:
+            oled_write("UNDEF", false);
+    }
+
+    oled_set_cursor(0, 5);
+
+    /* Print current layer */
+    oled_write("LAYER", false);
+
+    oled_set_cursor(0, 6);
+
+    switch (get_highest_layer(layer_state)) {
+        case _QWERTY:
+            oled_write("Base ", false);
+            break;
+        case _GAMING:
+            oled_write("Games", false);
+            break;
+        case _RAISE:
+            oled_write("Raise", false);
+            break;
+        case _LOWER:
+            oled_write("Lower", false);
+            break;
+        case _ADJUST:
+            oled_write("Adj  ", false);
+            break;
+        default:
+            oled_write("Undef", false);
+    }
+
+    /* caps lock */
+    oled_set_cursor(0, 8);
+    oled_write("CPSLK", led_usb_state.caps_lock);
+
+
 // When you add source files to SRC in rules.mk, you can use functions.
 const char *read_layer_state(void);
 const char *read_logo(void);
