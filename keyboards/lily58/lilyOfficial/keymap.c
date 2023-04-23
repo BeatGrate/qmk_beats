@@ -262,7 +262,6 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 /* KEYBOARD PET END */
 
 static void print_logo_narrow(void) {
-    render_logo();
 	
     /* wpm counter */
     uint8_t n = get_current_wpm();
