@@ -286,7 +286,7 @@ static void print_logo_narrow(void) {
     oled_write(wpm_str, false);
 
     oled_set_cursor(0, 8);
-    oled_write(" wpm", false);
+    oled_write("wpm", false);
 }
 
 static void print_status_narrow(void) {
@@ -298,35 +298,27 @@ static void print_status_narrow(void) {
         oled_write_raw_P(windows_logo, sizeof(windows_logo));
     }
 
+    }
+
     oled_set_cursor(0, 3);
 
-    switch (get_highest_layer(default_layer_state)) {
-        case _QWERTY:
-            oled_write("QWRTY", false);
-            break;
-        default:
-            oled_write("UNDEF", false);
-    }
+    /* Print current layer */
+    oled_write("Layer:", false);
 
     oled_set_cursor(0, 5);
 
-    /* Print current layer */
-    oled_write("LAYER", false);
-
-    oled_set_cursor(0, 6);
-
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write("Base ", false);
+            oled_write("QWERTY", false);
             break;
         case _RAISE:
-            oled_write("Raise", false);
+            oled_write("RAISE", false);
             break;
         case _LOWER:
-            oled_write("Lower", false);
+            oled_write("LOWER", false);
             break;
         case _ADJUST:
-            oled_write("Adj  ", false);
+            oled_write("ADJUST", false);
             break;
         default:
             oled_write("Undef", false);
