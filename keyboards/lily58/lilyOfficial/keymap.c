@@ -302,22 +302,22 @@ static void print_status_narrow(void) {
     oled_set_cursor(0, 3);
 
     /* Print current layer */
-    oled_write("Layer:", false);
+    oled_write("LAYER", false);
 
     oled_set_cursor(0, 5);
 
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write("QWERTY", false);
+            oled_write("Base", false);
             break;
         case _RAISE:
-            oled_write("RAISE", false);
+            oled_write("Raise", false);
             break;
         case _LOWER:
-            oled_write("LOWER", false);
+            oled_write("Lower", false);
             break;
         case _ADJUST:
-            oled_write("ADJUST", false);
+            oled_write("Adj", false);
             break;
         default:
             oled_write("Undef", false);
